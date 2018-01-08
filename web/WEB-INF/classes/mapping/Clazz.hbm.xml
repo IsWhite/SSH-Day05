@@ -1,0 +1,14 @@
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <!--c4-->
+    <class name="com.lanou.domain.Clazz">
+        <id name="cid">
+            <generator class="native"/>
+        </id>
+        <property name="cname"/>
+        <property name="cinfor"/>
+    </class>
+
+</hibernate-mapping>
