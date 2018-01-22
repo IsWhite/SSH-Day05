@@ -48,7 +48,7 @@ public class MainTest {
         session.close();
     }
 
-    @Test //测试声明
+    @Test //@test测试声明
     public void add() {
         User user = new User("李四", "123"); //User构造方法
 

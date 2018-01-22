@@ -19,63 +19,128 @@
     <table id="14" parent="1" name="user"/>
     <table id="15" parent="1" name="Clazz"/>
     <table id="16" parent="1" name="student"/>
-    <column id="17" parent="14" name="id">
+    <table id="17" parent="1" name="Area"/>
+    <table id="18" parent="1" name="city"/>
+    <table id="19" parent="1" name="province"/>
+    <column id="20" parent="14" name="id">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
       <sequence-identity>1</sequence-identity>
     </column>
-    <column id="18" parent="14" name="name">
+    <column id="21" parent="14" name="name">
       <data-type>varchar(30)|0</data-type>
     </column>
-    <column id="19" parent="14" name="password">
+    <column id="22" parent="14" name="password">
       <data-type>varchar(30)|0</data-type>
     </column>
-    <key id="20" parent="14" name="PRIMARY">
+    <key id="23" parent="14" name="PRIMARY">
       <columns>id</columns>
       <primary>1</primary>
     </key>
-    <column id="21" parent="15" name="cid">
+    <column id="24" parent="15" name="cid">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
       <sequence-identity>1</sequence-identity>
     </column>
-    <column id="22" parent="15" name="cname">
+    <column id="25" parent="15" name="cname">
       <data-type>varchar(255)|0</data-type>
     </column>
-    <column id="23" parent="15" name="cinfor">
+    <column id="26" parent="15" name="cinfor">
       <data-type>varchar(255)|0</data-type>
     </column>
-    <key id="24" parent="15" name="PRIMARY">
+    <key id="27" parent="15" name="PRIMARY">
       <columns>cid</columns>
       <primary>1</primary>
     </key>
-    <column id="25" parent="16" name="sid">
+    <column id="28" parent="16" name="sid">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
       <sequence-identity>1</sequence-identity>
     </column>
-    <column id="26" parent="16" name="sname">
+    <column id="29" parent="16" name="sname">
       <data-type>varchar(255)|0</data-type>
     </column>
-    <column id="27" parent="16" name="spassword">
+    <column id="30" parent="16" name="spassword">
       <data-type>varchar(255)|0</data-type>
     </column>
-    <column id="28" parent="16" name="clazz">
+    <column id="31" parent="16" name="clazz">
       <data-type>int(11)|0</data-type>
     </column>
-    <index id="29" parent="16" name="FKfvaxdyb0r2txd7lnp378xnbrx">
+    <index id="32" parent="16" name="FKfvaxdyb0r2txd7lnp378xnbrx">
       <columns>clazz</columns>
       <desc-columns></desc-columns>
     </index>
-    <key id="30" parent="16" name="PRIMARY">
+    <key id="33" parent="16" name="PRIMARY">
       <columns>sid</columns>
       <primary>1</primary>
     </key>
-    <foreign-key id="31" parent="16" name="FKfvaxdyb0r2txd7lnp378xnbrx">
+    <foreign-key id="34" parent="16" name="FKfvaxdyb0r2txd7lnp378xnbrx">
       <columns>clazz</columns>
       <ref-key>~.Clazz.PRIMARY</ref-key>
       <cascade-update-rule>restrict</cascade-update-rule>
       <cascade-delete-rule>restrict</cascade-delete-rule>
     </foreign-key>
+    <column id="35" parent="17" name="aid">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="36" parent="17" name="areaName">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="37" parent="17" name="city">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <index id="38" parent="17" name="FK48vhym000pps6rophd6bhmn25">
+      <columns>city</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="39" parent="17" name="PRIMARY">
+      <columns>aid</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="40" parent="17" name="FK48vhym000pps6rophd6bhmn25">
+      <columns>city</columns>
+      <ref-key>~.city.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="41" parent="18" name="cid">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="42" parent="18" name="cityName">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="43" parent="18" name="province">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <index id="44" parent="18" name="FK50334uu7bm18txr3f5irfe91f">
+      <columns>province</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="45" parent="18" name="PRIMARY">
+      <columns>cid</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="46" parent="18" name="FK50334uu7bm18txr3f5irfe91f">
+      <columns>province</columns>
+      <ref-key>~.province.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="47" parent="19" name="pid">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="48" parent="19" name="provinceName">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <key id="49" parent="19" name="PRIMARY">
+      <columns>pid</columns>
+      <primary>1</primary>
+    </key>
   </database-model>
 </dataSource>
