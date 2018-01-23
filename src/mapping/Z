@@ -1,0 +1,19 @@
+xx.hbm.xml多对一的写法
+
+ <class name="多方-类路径"
+           table="多方">
+        <id name="主键">
+            <generator class="生成主键策略"/>  "native/等"  generator译 生产者
+        </id>
+
+        <!--普通属性-->
+        <property name="属性1"/>
+        <property name="属性2"/>
+
+        <many-to-one name="单方"
+                     class="单方-类路径"
+                     cascade="级联方法"> cascade译 串联
+        </many-to-one>
+        级联方法包括(all,save-update,delete等)
+    </class>
+

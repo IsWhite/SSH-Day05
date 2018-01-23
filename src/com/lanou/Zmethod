@@ -1,0 +1,17 @@
+1,实现可序列化接口:implements Serializable; serializable译 可序列化
+2,测试类的相关配置:    Configuration 译 配置 configure 译 安装 transaction译 事务
+  新建配置:Configuration config = new Configuration();
+  配置安装:config.configure();
+  建造会话工厂: SessionFactory sessionFactory = config.buildSessionFactory();
+  打开会话: Session session = sessionFactory.openSession();
+  开始事务: Transaction transaction = session.beginTransaction();
+
+  提交事务:transaction.commit(); 无参
+  关闭会话:session.close();  无参
+3,多对一
+ 方法1,save(); session调用 参数save(String var1, Object var2); 或save(Object var1);
+ 绑定班级,维护单方:student.setClazz(clazz); (多.--单)
+ 并保存学生:session.save(student); (但保存单方clazz没法级联保存)
+
+ 方法2,get();session调用 参数很多种,get(Class<T> var1, Serializable var2)
+ Student student =session.get(Student.class,1);
